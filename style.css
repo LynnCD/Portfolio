@@ -1,1 +1,31 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+}
 
+
+
+
+
+
+
+
+.h1 {
+  display: block;
+  font: lobster;
+  text-decoration: none;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+  h1 {
+    display: none;
+  }
+
+  nav ul {
+    display: none;
+  }
+  nav::after {
+    content: "Hamburger!";
+  }
+}
