@@ -1,23 +1,37 @@
-.nav {
-  display: flex;
-  flex-direction: column;
+h1 a {
+  display: block;
+  font: 'Tangerine', serif;
+  text-decoration: none;
+  color: black;
 }
 
+nav {
+  display: grid;
+  text-align: center;
+}
 
+main {
+  text-align: center;
+}
 
-
-
-
-
-
-.h1 {
-  display: block;
-  font: lobster;
+li.project a {
   text-decoration: none;
 }
 
+ul {
+  list-style: none;
+}
+
+footer {
+  clear: both;
+	color: DarkSlateGray;
+	font-size: 15px;
+  opacity: 0.8;
+  text-align: center;
+}
+
 /* Mobile */
-@media (max-width: 800px) {
+/*@media (max-width: 800px) {
   h1 {
     display: none;
   }
@@ -28,4 +42,4 @@
   nav::after {
     content: "Hamburger!";
   }
-}
+}*/
