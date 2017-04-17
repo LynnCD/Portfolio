@@ -34,7 +34,8 @@ nav li {
 @media screen and (max-width: 860px) {
     .hamburger {
       background:none;
-      position:absolute;
+      position: relative;
+      text-align: center;
       top:0;
       right:0;
       line-height:45px;
@@ -47,7 +48,8 @@ nav li {
       outline:none;
       z-index:10000000000000;
     }
-  }
+
+ }
 
 nav li a:hover {
   color: #737373;
