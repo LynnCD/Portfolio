@@ -69,8 +69,53 @@ figure {
   display: block;
   padding-top: 10px;
 }
+
+.carousel-button {
+  color: #000;
+  background-color: #f1f1f1;
+  padding: 8px 16px;
+}
+
+.carousel-right {
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  transform: translate(0%,-50%);
+}
+
+.carousel-left {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(0%, 50%);
+}
+
+article {
+  color: black;
+  text-align:left;
+  font-family: inherit;
+  margin: 250px;
+}
+article h2 {
+  font-size: 17px;
+  font-weight:bolder;
+}
+article p {
+  font-size: 15px;
+}
+
 footer li {
   display: inline;
+}
+aside {
+  color: black;
+  text-align:right;
+  font-family: inherit;
+  margin: 250px;
+}
+aside h2 {
+  font-size: 17px;
+  font-weight:bolder;
 }
 
 footer section{

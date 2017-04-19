@@ -1,8 +1,17 @@
-var Project = [];
+var slideIndex = 1;
+showDivs(slideIndex);
 
-function Project (project_data) {
-  this.name = project_data.name;
-  this.language = project_data.language;
-  this.tools = project_data.toold;
-  this.url = project_data.url;
+function plusDivs(n) {
+    showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+    var i;
+    var x = $("figure.slide");
+    if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length} ;
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    x[slideIndex-1].style.display = "inline-block";
 }
