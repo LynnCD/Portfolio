@@ -26,27 +26,59 @@
     </header>
 
     <main>
-      <figure>
-        <img id ="projects" src="placeholderimg.jpeg" height="550" width="900"/>
-        <p>
-          <figcation>
-            project1: project description.
-          </figcation>
-        </p>
-      </figure>
+      <div>
+        <figure class="slide">
+          <img src="IMG/placeholder1.jpeg" height="550" width="900"/>
+          <p>
+            <figcaption>
+              project1: project description.
+            </figcaption>
+          </p>
+        </figure>
+        <figure class="slide">
+          <img src="IMG/placeholder2.jpeg" height="550" width="900"/>
+          <p>
+            <figcaption>
+              project2: project description.
+            </figcaption>
+          </p>
+        </figure>
+        <button class="carousel-button carousel-left" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="carousel-button carousel-right" onclick="plusDivs(+1)">&#10095;</button>
+      </div>
+
       <section id="skills">
-        <p>
-          skilles: blablabla
+        <p id="language">
+          <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Javascript</li>
+          <li>Python</li>
+          <li>SQL</li>
+          <li></li>
+          </ul>
+        </p>
+        <p id="tools">
+          <ul>
+          <li>jQuery</li>
+          <li>node.js</li>
+          <li></li>
+          <li></li>
+          </ul>
         </p>
       </section>
-      <section id="about">
-        <p>
-          about me: blablabla
-        </p>
-     </section>
-      <form>
-      </form>
+      <article id="about">
+        <h2>About Me</h2>
+        <p>I'm so cool. yadayada. You know nothing, John Snow.</p>
+      </article>
+      <aside id="books-map">
+        <h2>Books I am currently reading:</h2>
+        <ul>
+          <li>Dark Money</li>
+          <li></li>
+      </aside>
     </main>
+
     <footer>
       <section id ="contact">
         <ul class="medialinks">
