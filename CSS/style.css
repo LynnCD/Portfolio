@@ -9,21 +9,29 @@ h1 a {
   font-family: 'Tangerine';
   color: black;
   font-size: 5em;
+  font-weight: bolder;
+}
+
+h3 {
+  color: #2a2a2a;
   font-weight:bolder;
 }
 
 /*desktop*/
 @media screen  and (min-width: 800px){
-.hamburger {display: none;}
-nav li {
-  display: inline;
-  font-size: 13px;
-  color: #2a2a2a;
-  border-top: #ccc 1px solid;
-  border-bottom: #ccc 1px solid;
-  padding: 7px 40px;
-  margin: 0 50px;
-  font-weight:bolder;
+  .hamburger {
+    display: none;
+  }
+
+  nav li {
+    display: inline;
+    font-size: 13px;
+    color: #2a2a2a;
+    border-top: #ccc 1px solid;
+    border-bottom: #ccc 1px solid;
+    padding: 7px 40px;
+    margin: 0 50px;
+    font-weight:bolder;
   }
 }
 /* landscape */
@@ -35,7 +43,8 @@ nav li {
     .hamburger {
       background:none;
       position: relative;
-      text-align: center;
+      /*text-align: center;*/
+      float: right;
       top:0;
       right:0;
       line-height:45px;
@@ -49,6 +58,16 @@ nav li {
       z-index:10000000000000;
     }
 
+    nav ul {
+      display: none;
+      padding: 0;
+      list-style: none;
+      clear: both;
+    }
+
+    nav:hover ul {
+      display: block;
+    }
  }
 
 nav li a:hover {
@@ -59,15 +78,25 @@ header a {
   color: black;
 }
 main {
-  text-align: center;
   margin: 40px 0 10px 0;
 }
+
 main section {
-  margin: 50px;
+  margin: 30px 10px;
 }
+
 figure {
   display: block;
+  max-width: 900px;
   padding-top: 10px;
+}
+
+figure img {
+  width: 100%;
+}
+
+.carousel {
+  text-align: center;
 }
 
 .carousel-button {
@@ -90,39 +119,42 @@ figure {
   transform: translate(0%, 50%);
 }
 
-article {
+section#skills {
+  flex-wrap: nowrap;
+  max-width: 900px;
+  margin: 10px auto 30px;
+}
+
+section#skills li {
+  display: inline;
+
+}
+.aboutme {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.aboutme article, .aboutme aside {
+  max-width: 480px;
+  border: #ccc 1px solid;
+  padding: 20px;
+  margin: 5px 10px 20px;
+  font-family: inherit;
   color: black;
   text-align:left;
-  font-family: inherit;
-  margin: 250px;
 }
-article h2 {
-  font-size: 17px;
-  font-weight:bolder;
+
+.aboutme aside {
+  max-width:  296px; // 900px - 480px - 80px -40px - 4px;
 }
-article p {
+
+article p, aside ul {
   font-size: 15px;
 }
 
-footer li {
-  display: inline;
-}
-aside {
-  color: black;
-  text-align:right;
-  font-family: inherit;
-  margin: 250px;
-}
-aside h2 {
-  font-size: 17px;
-  font-weight:bolder;
-}
-
-footer section{
-  padding: 10px 30px;
-  font-size: 30px;
-  margin: 10px;
-}
 footer {
   clear: both;
 	color: DarkSlateGray;
@@ -132,16 +164,12 @@ footer {
   margin: 10px 0;
 }
 
-/* Mobile */
-/*@media (max-width: 800px) {
-  h1 {
-    display: none;
-  }
+footer li {
+  display: inline;
+}
 
-  nav ul {
-    display: none;
-  }
-  nav::after {
-    content: "Hamburger!";
-  }
-}*/
+footer section{
+  padding: 10px 30px;
+  font-size: 30px;
+  margin: 20px 0px 10px;
+}
