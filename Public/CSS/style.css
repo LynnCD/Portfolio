@@ -1,7 +1,15 @@
+* {box-sizing:border-box}
+
 header {
   text-align: center;
   position: relative;
 }
+
+header a {
+  text-decoration: none;
+  color: black;
+}
+
 h1 {
   margin: 30px 10px 40px 10px;
 }
@@ -12,9 +20,9 @@ h1 a {
   font-weight: bolder;
 }
 
-h3 {
-  color: #2a2a2a;
-  font-weight:bolder;
+main {
+  max-width: 980px;
+  margin: 50px auto 10px auto;
 }
 
 /*desktop*/
@@ -23,14 +31,21 @@ h3 {
     display: none;
   }
 
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+    max-width: 980px;
+    margin: 0 auto;
+  }
+
   nav li {
     display: inline;
     font-size: 13px;
     color: #2a2a2a;
     border-top: #ccc 1px solid;
     border-bottom: #ccc 1px solid;
-    padding: 7px 40px;
-    margin: 0 50px;
+    padding: 7px 0;
+    width: 160px;
     font-weight:bolder;
   }
 }
@@ -39,15 +54,21 @@ h3 {
 
 }
 /* mobile */
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 799px) {
+    h1 {
+      margin-bottom: 5px;
+    }
+
+    main {
+      margin-top: 15px;
+    }
+
     .hamburger {
       background:none;
       position: relative;
-      /*text-align: center;*/
+      z-index:100000000000;
       float: right;
-      top:0;
-      right:0;
-      line-height:45px;
+      line-height:50px;
       padding:5px 15px 0px 15px;
       color:black;
       border:0;
@@ -55,7 +76,6 @@ h3 {
       font-weight:lighter;
       cursor:pointer;
       outline:none;
-      z-index:10000000000000;
     }
 
     nav ul {
@@ -73,86 +93,97 @@ h3 {
 nav li a:hover {
   color: #737373;
 }
-header a {
-  text-decoration: none;
-  color: black;
-}
-main {
-  margin: 40px 0 10px 0;
+
+.carousel {
+  text-align: center;
+  position: relative;
 }
 
-main section {
-  margin: 30px 10px;
+.carousel-left {
+  left: 0%;
+  border-radius: 0 5px 5px 0;
 }
 
-figure {
-  display: block;
-  max-width: 900px;
-  padding-top: 10px;
+.carousel-right {
+  right: 0%;
+  border-radius: 5px 0 0 5px;
+}
+
+.carousel a {
+ top: 50%;
+ cursor: pointer;
+ position: absolute;
+ color: white;
+ font-weight:lighter;
+ font-size: 30px;
+ transition: 0.6s ease;
+ padding: 10px 12px;
+}
+
+.carousel a:hover {
+  background-color: #f1f1f1;
+  opacity: 0.6;
 }
 
 figure img {
   width: 100%;
 }
 
-.carousel {
-  text-align: center;
-}
-
-.carousel-button {
-  color: #000;
-  background-color: #f1f1f1;
-  padding: 8px 16px;
-}
-
-.carousel-right {
+figcaption {
+  color: black;
+  font-size: 20px;
   position: absolute;
-  top: 50%;
-  right: 0%;
-  transform: translate(0%,-50%);
+  bottom: 10px;
+  width: 70%;
+  background-color: gray;
+  /*change color, change size, change opacity*/
 }
 
-.carousel-left {
-  position: absolute;
-  top: 50%;
-  left: 0%;
-  transform: translate(0%, 50%);
-}
-
-section#skills {
-  flex-wrap: nowrap;
-  max-width: 900px;
+span {
+  max-width: 1200px;
   margin: 10px auto 30px;
 }
 
-section#skills li {
+span li {
   display: inline;
-
 }
+
+h3 {
+  color: #2a2a2a;
+  font-weight:bolder;
+}
+
 .aboutme {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  max-width: 900px;
-  margin: 0 auto;
+  justify-content: space-between;
 }
 
 .aboutme article, .aboutme aside {
-  max-width: 480px;
+  max-width: 500px;
   border: #ccc 1px solid;
   padding: 20px;
-  margin: 5px 10px 20px;
+  margin: 5px 0 20px;
   font-family: inherit;
   color: black;
   text-align:left;
+  border-radius: 10px;
 }
 
 .aboutme aside {
-  max-width:  296px; // 900px - 480px - 80px -40px - 4px;
+  max-width:  400px;
 }
 
 article p, aside ul {
   font-size: 15px;
+}
+aside img {
+  width: 100px;
+  height: 120px;
+}
+#books li {
+  display: inline-flex;
+  padding: 5px;
 }
 
 footer {
