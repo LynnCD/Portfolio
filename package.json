@@ -1,0 +1,24 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "my portfolio",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LynnCD/Portfolio.git"
+  },
+  "author": "Lynn Chen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LynnCD/Portfolio/issues"
+  },
+  "homepage": "https://github.com/LynnCD/Portfolio#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2"
+  }
+}
