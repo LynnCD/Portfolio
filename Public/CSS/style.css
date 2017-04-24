@@ -64,24 +64,19 @@ main {
     }
 
     .hamburger {
-      background:none;
-      position: relative;
+      position: absolute;
+      right: 0;
+      top: 0;
       z-index:100000000000;
-      float: right;
       line-height:50px;
-      padding:5px 15px 0px 15px;
-      color:black;
-      border:0;
+      padding:5px 15px 30px 15px;
       font-size:70px;
-      font-weight:lighter;
       cursor:pointer;
-      outline:none;
     }
 
     nav ul {
       display: none;
       padding: 0;
-      list-style: none;
       clear: both;
     }
 
@@ -125,11 +120,11 @@ nav li a:hover {
   opacity: 0.6;
 }
 
-figure img {
+.project img {
   width: 100%;
 }
 
-figcaption {
+.project figcaption {
   color: black;
   font-size: 20px;
   position: absolute;
@@ -157,6 +152,8 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  font-size: 15px;
+  margin-top:50px;
 }
 
 .aboutme article, .aboutme aside {
@@ -170,20 +167,30 @@ h3 {
   border-radius: 10px;
 }
 
-.aboutme aside {
-  max-width:  400px;
+.aboutme aside.bookshelf {
+  max-width:  450px;
 }
 
-article p, aside ul {
-  font-size: 15px;
+ #books {
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 20px;
 }
-aside img {
+
+#books img {
   width: 100px;
   height: 120px;
 }
-#books li {
-  display: inline-flex;
-  padding: 5px;
+
+time {
+  display: inline-block;
+}
+
+#mapdiv {
+  width: 980px;
+  height: 450px;
+  margin: 50px auto 50px auto;
 }
 
 footer {
