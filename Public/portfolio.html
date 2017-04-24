@@ -26,66 +26,71 @@
       <nav class="menu">
         <div class="hamburger">&#9776;</div>
         <ul>
-          <li><a href="#about">ABOUT</a></li>
-          <li><a href="#projects">PROJECTS</a></li>
-          <li><a href="#skills">SKILLS</a></li>
-          <li><a href="#contact">CONTACT</a></li>
+          <li><a href="#about" onclick="showTab(0)">ABOUT</a></li>
+          <li><a href="#projects" onclick="showTab(0)">PROJECTS</a></li>
+          <li><a href="#skills" onclick="showTab(0)">SKILLS</a></li>
+          <li><a href="#contact" onclick="showTab(1)">CONTACT</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
     <!-- Todo: make project description show my on hover and 'readmore' -->
-      <section id="projects" class="carousel">
-        <figure class="project">
-          <img src="IMG/placeholder1.jpeg"/>
-          <figcaption>
-            project1: project description.
-          </figcaption>
-        </figure>
-        <figure class="project">
-          <img src="IMG/placeholder2.jpeg"/>
-          <figcaption>
-            project2: project description.
-          </figcaption>
-        </figure>
-        <a class="carousel-button carousel-left" onclick="plusDivs(-1)">&#10094;</a>
-        <a class="carousel-button carousel-right" onclick="plusDivs(1)">&#10095;</a>
-      </section>
-<!-- Todo: make skill bubbles clikable and link to related project -->
-      <span id="skills">
-        <p id="language">
-          <ul>
-            <li>LANGUAGES:</li>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>Javascript</li>
-            <li>Python</li>
-            <li>SQL</li>
-          </ul>
-        </p>
-        <p id="tools">
-          <ul>
-            <li>TOOLS:</li>
-            <li>jQuery</li>
-            <li>node.js</li>
-          </ul>
-        </p>
-      </span>
-      <div class='aboutme'>
-        <article id='about'>
-          <h3>About Me</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. </p>
-            <p>Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. </p>
-        </article>
-        <aside class='bookshelf'>
-          <h3>My Bookshelf</h3>
-            <p><i>Below are the books I'm currently reading and their number of days on the shelf.</i></p>
-            <ul id="books">
+      <div class="tab content">
+        <section id="projects" class="carousel">
+          <figure class="project">
+            <img src="IMG/placeholder1.jpeg"/>
+            <figcaption>
+              project1: project description.
+            </figcaption>
+          </figure>
+          <figure class="project">
+            <img src="IMG/placeholder2.jpeg"/>
+            <figcaption>
+              project2: project description.
+            </figcaption>
+          </figure>
+          <a class="carousel-button carousel-left" onclick="incProject(-1)">&#10094;</a>
+          <a class="carousel-button carousel-right" onclick="incProject(1)">&#10095;</a>
+        </section>
+  <!-- Todo: make skill bubbles clikable and link to related project -->
+        <span id="skills">
+          <p id="language">
+            <ul>
+              <li>LANGUAGES:</li>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>Javascript</li>
+              <li>Python</li>
+              <li>SQL</li>
             </ul>
-        </aside>
+          </p>
+          <p id="tools">
+            <ul>
+              <li>TOOLS:</li>
+              <li>jQuery</li>
+              <li>node.js</li>
+            </ul>
+          </p>
+        </span>
+        <div class='aboutme'>
+          <article id='about'>
+            <h3>About Me</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. </p>
+              <p>Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. </p>
+          </article>
+          <aside class='bookshelf'>
+            <h3>My Bookshelf</h3>
+              <p>Contains books I'm currently reading and their number of days on the shelf.</p>
+              <ul id="books">
+              </ul>
+          </aside>
+        </div>
+        <div id="mapdiv">
+        </div>
       </div>
-      <div id="mapdiv">
+      <div class="tab contact">
+        <p>Check me out on social media. &#9759;</p>
       </div>
     </main>
 
@@ -110,5 +115,6 @@
     <script type="text/javascript" src="JS/books.js"></script>
     <script type="text/javascript" src="JS/carousel.js"></script>
     <script type="text/javascript" src="JS/map.js"></script>
+    <script type="text/javascript" src="JS/tabs.js"></script>
  </body>
 </html>
