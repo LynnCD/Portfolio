@@ -5,7 +5,6 @@ function showProject(n) {
   let $projects = $('figure.project');
   $projects.hide();
 
-
   if (n >= $projects.length) {
     slideIndex = 0;
   } else if (n < 0) {
@@ -19,7 +18,4 @@ showProject(slideIndex);
 
 function incProject(n) {
   showProject(slideIndex += n);
-  
-function plusDivs(n) {
-  showDivs(slideIndex += n);
 }
