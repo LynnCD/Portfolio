@@ -11,7 +11,7 @@ header a {
 }
 
 h1 {
-  margin: 30px 10px 40px 10px;
+  margin: 20px 10px 40px 10px;
 }
 h1 a {
   font-family: 'Tangerine';
@@ -136,55 +136,55 @@ nav li a:hover {
   opacity: .8;
 }
 
-span {
-  max-width: 1200px;
-  margin: 10px auto 30px;
-}
-
 span li {
   display: inline;
 }
 
 h3 {
   color: #2a2a2a;
-  font-weight:bolder;
+  font-weight: bolder;
   margin-bottom: 10px;
   text-align: center;
   font-size: 17px;
 }
 
-.aboutme {
+.tab.about {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   font-size: 15px;
   margin-top:50px;
+  margin-bottom: 70px;
 }
 
-article, aside {
-  max-width: 520px;
+article {
   border: #ccc 1px solid;
   padding: 20px;
-  margin: 5px 0 20px;
+  border-radius: 10px;
+  max-width: 420px;
   font-family: inherit;
   color: black;
-  text-align:left;
-  border-radius: 10px;
+}
+
+aside {
+  max-width: 540px;
 }
 
 .bookshelf {
-  max-width:  420px;
+  border: #ccc 1px solid;
+  border-radius: 10px;
 }
 
 .bookshelf p {
   font-style: oblique;
+  text-align: center;
 }
 
  #books {
   display: inline-flex;
   width: 100%;
   justify-content: space-around;
-  margin-top: 10px;
+  margin: 10px auto 40px auto;
 }
 
 #books img {
@@ -192,23 +192,23 @@ article, aside {
   height: 120px;
 }
 
-time {
+.books ul {
   display: inline-block;
   font-style: oblique;
-  padding-left: 30px;
+  /*padding-left: 30px;*/
 }
 
 #mapdiv {
-  width: 980px;
-  height: 450px;
-  margin: 50px auto 50px auto;
+  width: 500px;
+  height: 300px;
+  text-align: center;
 }
 
 .tab.contact {
   font-size: 35px;
   text-align: center;
   font-style: italic;
-  padding-bottom: 30px;
+  /*padding-bottom: 30px;*/
 }
 
 footer {
@@ -217,7 +217,7 @@ footer {
 	font-size: 14px;
   opacity: 0.8;
   text-align: center;
-  margin: 10px 0;
+  margin: 30px 0;
 }
 
 footer li {
