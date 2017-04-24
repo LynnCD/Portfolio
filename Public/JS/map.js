@@ -16,6 +16,10 @@ let map = AmCharts.makeChart('mapdiv', {
     getAreasFromMap : true,
     areas : [
       {
+        'id': 'US-CO',
+        'showAsSelected': true
+      },
+      {
         'id': 'US-CA',
         'showAsSelected': true
       },
