@@ -192,6 +192,12 @@ aside {
   height: 120px;
 }
 
+time {
+ display: block;
+ font-style: oblique;
+ padding-left: 30px;
+  }
+
 .books ul {
   display: inline-block;
   font-style: oblique;
