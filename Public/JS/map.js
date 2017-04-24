@@ -2,15 +2,6 @@
   Map from https://www.amcharts.com/visited_states/
 */
 
-// $.getJSON('JS/statesVisited.json').then(function(states_visited){
-//   return states_visited;
-// })
-
-let statesVisited = [];
-$.getJSON('DATA/statesVisited.json').then(function(states_visited) {
-  statesVisited = states_visited;
-})
-
 let map = AmCharts.makeChart('mapdiv', {
   type: 'map',
   theme: 'light',
