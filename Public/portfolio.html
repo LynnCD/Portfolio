@@ -35,7 +35,7 @@
     </header>
 
     <main>
-    <!-- Todo: make project description show my on hover and 'readmore' -->
+    <!-- Todo: use handlebar, and make project description show my on hover and 'readmore' -->
       <section class='tab projects carousel'>
         <figure class='project'>
           <img src='IMG/placeholder1.jpeg'/>
@@ -52,26 +52,7 @@
         <a class='carousel-button carousel-left' onclick='incProject(-1)'>&#10094;</a>
         <a class='carousel-button carousel-right' onclick='incProject(1)'>&#10095;</a>
       </section>
-  <!-- Todo: make skill bubbles clikable and link to related project -->
-      <span class='tab skills'>
-        <p id='language'>
-          <ul>
-            <li>LANGUAGES:</li>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>Javascript</li>
-            <li>Python</li>
-            <li>SQL</li>
-          </ul>
-        </p>
-        <p id='tools'>
-          <ul>
-            <li>TOOLS:</li>
-            <li>jQuery</li>
-            <li>node.js</li>
-          </ul>
-        </p>
-      </span>
+      <div class='tab skills' id="chartdiv" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>
       <div class='tab about'>
         <article id='aboutme'>
           <h3>About Me</h3>
@@ -97,22 +78,21 @@
     </main>
 
     <footer>
-      <section id ='contact'>
+      <section>
         <ul class='medialinks'>
-           <a href='https://github.com/LynnCD'>
+           <a href='https://github.com/LynnCD' target='_blank'>
              <li><i class='fa fa-github' aria-hidden='true'></i></li></a>
-           <a href='https://plus.google.com/u/0/+LynnDC'>
+           <a href='https://plus.google.com/u/0/+LynnDC' target='_blank'>
              <li><i class='fa fa-google-plus' aria-hidden='true'></i></li></a>
-           <a href='https://twitter.com/thexsInfluencer'>
+           <a href='https://twitter.com/thexsInfluencer' target='_blank'>
              <li><i class='fa fa-twitter' aria-hidden='true'></i></li></a>
-           <a href='https://medium.com/@lynn.d.chen'>
+           <a href='https://medium.com/@lynn.d.chen' target='_blank'>
              <li><i class='fa fa-medium' aria-hidden='true'></i></li></a>
         </ul>
       </section>
        &copy; 2017 Lynn D.C. All rights reserved.
     </footer>
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js'></script>
-    <script scr='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js'></script>
     <script src='https://cdn.jsdelivr.net/handlebarsjs/4.0.5/handlebars.min.js'></script>
     <script type='text/javascript' src='JS/books.js'></script>
     <script type='text/javascript' src='JS/carousel.js'></script>

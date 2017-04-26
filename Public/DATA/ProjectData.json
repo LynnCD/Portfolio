@@ -1,0 +1,13 @@
+[{
+		"name": "project name",
+		"description": "project description",
+		"url": "github or other site",
+		"img": "project image"
+	},
+	{
+		"name": "project2 name",
+		"description": "project2 description",
+		"url": "github or other site",
+		"img": "project2 image"
+	}
+]
