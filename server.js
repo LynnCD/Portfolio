@@ -8,10 +8,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3000;
 const app = express();
-app.use(express.static('./public'));
+app.use(express.static('./Public'));
 
 app.get('/', function(request,response){
-  response.sendFile('public/portfolio.html', {root: '.'});
+  response.sendFile('Public/portfolio.html', {root: '.'});
 });
 
 app.post('/project_data', bodyParser, function(request, response) {
@@ -20,5 +20,5 @@ app.post('/project_data', bodyParser, function(request, response) {
 })
 
 app.listen(PORT, function(){
-  console.log(`server is running on port:${PORT}`)
+  console.log(`server is running on port: ${PORT}`)
 });
