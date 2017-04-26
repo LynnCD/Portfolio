@@ -1,0 +1,22 @@
+[{
+		"languages": "javascript ES6/jquery"
+	},
+	{
+		"languages": "HTML5/CSS3"
+	},
+	{
+		"languages": "PYTHON"
+	},
+	{
+		"languages": "SQL"
+	},
+	{
+		"tools": "Django"
+	},
+	{
+		"tools": "Postgres"
+	},
+	{
+		"tools": "node.js"
+	}
+]
