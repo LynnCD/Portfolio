@@ -1,8 +1,4 @@
 'use strict';
-// get: is to get the thing thats already exsit, if no data exist yet, retrieve nothing.
-//post: create a resoure in server and send new data to the data base.
-//put: update exsiting entry in the existing data base, it can only update things thats already exsit. can be used without 'get' if you konw the exact ID.
-//delete: removes an existing entry from the database.
 
 const express = require('express');
 const bodyParser = require('body-parser');
