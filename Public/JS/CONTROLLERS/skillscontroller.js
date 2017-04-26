@@ -5,7 +5,7 @@
 
   skillsController.init = function() {
     $('.tab').hide();
-    $('#skills').show();
+    $('.skills').show();
   }
 
   module.skillsController = skillsController;

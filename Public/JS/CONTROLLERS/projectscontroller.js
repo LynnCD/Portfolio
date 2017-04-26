@@ -5,7 +5,7 @@
 
   projectsController.init = function() {
     $('.tab').hide();
-    $('#projects').show();
+    $('.projects').show();
   }
 
   module.projectsController = projectsController;

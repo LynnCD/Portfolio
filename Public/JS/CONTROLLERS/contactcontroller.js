@@ -5,7 +5,7 @@
 
   contactController.init = function() {
     $('.tab').hide();
-    $('#contact').show();
+    $('.contact').show();
   }
 
   module.contactController = contactController;

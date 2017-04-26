@@ -5,7 +5,7 @@
 
   aboutController.init = function() {
     $('.tab').hide();
-    $('#about').show();
+    $('.about').show();
   }
 
   module.aboutController = aboutController;
