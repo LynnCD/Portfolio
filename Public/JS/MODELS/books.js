@@ -1,31 +1,44 @@
 'use strict';
 
-function Book (book_data) {
-  this.img = book_data.img;
-  this.url = book_data.url;
-  this.dateAdded = book_data.dateAdded;
-}
+(function(module){
+  function Book(BookData) {
+    Object.keys(BookData).forEach(key => this[key] = BookData[key]);
+  }
 
-Book.prototype.toHtml = function() {
-  let source   = $('#book-template').html();
-  let template = Handlebars.compile(source);
-  this.daysAgo = parseInt((new Date() - new Date(this.dateAdded))/1000/60/60/24);
-  return template(this);
-}
+  Book.all = [];
 
-$.getJSON('/Public/DATA/BookData.json', function(bookData) {
-  bookData.forEach(function(bookObject) {
-    let book = new Book(bookObject);
-    $('#books').append(book.toHtml());
+  Book.prototype.toHtml = function() {
+    let source   = $('#book-template').html();
+    let template = Handlebars.compile(source);
+    this.daysAgo = parseInt((new Date() - new Date(this.dateAdded))/1000/60/60/24);
+    return template(this);
+  }
+
+  $.getJSON('/Public/DATA/BookData.json', function(bookData) {
+    bookData.forEach(function(bookObject) {
+      let book = new Book(bookObject);
+      $('#books').append(book.toHtml());
+    });
   });
-});
 
-Book.fetchAll = function() {
-  if (localStorage.bookData) {
-    Book.loadAll(JSON.parse(localStorage.bookData));
-  } else {
-    $.getJSON('DATA/bookData.json').then(function(book_data){
-      Book.loadAll(book_data);
-      localStorage.project_data = JSON.stringify(book_data);
-    })
-  }}
+  Book.loadAll = function(BookData) {
+    BookData.forEach(function(ele) {
+      Book.all.push(new Book(ele));
+    });
+  };
+
+  Book.fetchAll = function() {
+    if (localStorage.bookData) {
+      Book.loadAll(JSON.parse(localStorage.bookData));
+    } else {
+      $.getJSON('DATA/bookData.json').then(function(book_data){
+        Book.loadAll(book_data);
+        Book.all.forEach(function(bookObject) {
+          let book = new Book(bookObject);
+          $('#books').append(book.toHtml());
+        });
+        localStorage.project_data = JSON.stringify(book_data);
+      })
+    }}
+  Book.fetchAll();
+})(window);
