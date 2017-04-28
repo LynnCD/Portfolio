@@ -15,11 +15,10 @@ app.use(express.static('./public'));
 
 app.get('*', (request, response) => response.sendFile('portfolio.html', {root: './public'}));
 
+// how to write FP code with two results?
 app.post('/project_data', bodyParser, function(request, response) {
   console.log(request.body);
   response.send('Record posted to server!!');
 })
 
-app.listen(PORT, function(){
-  console.log(`server is running on port:${PORT}`)
-});
+app.listen(PORT, () => console.log(`server is running on port:${PORT}`));
