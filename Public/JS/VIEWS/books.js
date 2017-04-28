@@ -8,8 +8,7 @@
   Book.all = [];
 
   Book.prototype.toHtml = function() {
-    let source   = $('#book-template').html();
-    let template = Handlebars.compile(source);
+    let template = Handlebars.compile($('#book-template').html());
     this.daysAgo = parseInt((new Date() - new Date(this.dateAdded))/1000/60/60/24);
     return template(this);
   }
@@ -19,13 +18,17 @@
       let book = new Book(bookObject);
       $('#books').append(book.toHtml());
     });
+
+    Book.all = bookData.map(function (bookObject) {
+      return new Book(bookObject);
+    });
   });
 
-  Book.loadAll = function(BookData) {
-    BookData.forEach(function(ele) {
-      Book.all.push(new Book(ele));
-    });
-  };
+  // Book.loadAll = function(BookData) {
+  //   BookData.forEach(function(ele) {
+  //     Book.all.push(new Book(ele));
+  //   });
+  // };
 
   Book.fetchAll = function() {
     if (localStorage.bookData) {

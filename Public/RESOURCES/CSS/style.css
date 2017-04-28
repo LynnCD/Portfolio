@@ -148,6 +148,24 @@ h3 {
   font-size: 17px;
 }
 
+.tab.skill {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 15px;
+  margin-top:50px;
+  margin-bottom: 50px;
+}
+
+#github {
+  border: #ccc 1px solid;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 220px;
+  font-family: inherit;
+  color: black;
+}
+
 .tab.about {
   display: flex;
   flex-wrap: wrap;
