@@ -10,9 +10,10 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 app.use(express.static('./public'));
 
-app.get('/', function(request,response){
-  response.sendFile('public/portfolio.html', {root: '.'});
-});
+// why would there be a difference between / and *
+// app.get('/', (request,response) => response.sendFile('public/portfolio.html', {root: '.'}));
+
+app.get('*', (request, response) => response.sendFile('portfolio.html', {root: './public'}));
 
 app.post('/project_data', bodyParser, function(request, response) {
   console.log(request.body);
