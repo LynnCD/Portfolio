@@ -7,41 +7,26 @@
 
   Book.all = [];
 
-  Book.prototype.toHtml = function() {
+  Book.prototype.toHtml = () => {
     let template = Handlebars.compile($('#book-template').html());
     this.daysAgo = parseInt((new Date() - new Date(this.dateAdded))/1000/60/60/24);
     return template(this);
   }
 
-  $.getJSON('/Public/DATA/BookData.json', function(bookData) {
-    bookData.forEach(function(bookObject) {
-      let book = new Book(bookObject);
-      $('#books').append(book.toHtml());
-    });
+  Book.loadAll = rows => {Book.all = rows.map(row => new Book(row));};
 
-    Book.all = bookData.map(function (bookObject) {
-      return new Book(bookObject);
-    });
-  });
+  Book.fetchAll = callback => {
+    if (localStorage.BookData){
+      Book.loadAll(JSON.parse(localStorage.BookData));}
+    else {
+      $.getJSON('DATA/bookData.json').then(
+          book_data => {
+            Book.loadAll(book_data);
+            localStorage.BookData = JSON.stringify(book_data);
+            callback();
+          });
+    }
+  };
 
-  // Book.loadAll = function(BookData) {
-  //   BookData.forEach(function(ele) {
-  //     Book.all.push(new Book(ele));
-  //   });
-  // };
-
-  Book.fetchAll = function() {
-    if (localStorage.bookData) {
-      Book.loadAll(JSON.parse(localStorage.bookData));
-    } else {
-      $.getJSON('DATA/bookData.json').then(function(book_data){
-        Book.loadAll(book_data);
-        Book.all.forEach(function(bookObject) {
-          let book = new Book(bookObject);
-          $('#books').append(book.toHtml());
-        });
-        localStorage.project_data = JSON.stringify(book_data);
-      })
-    }}
-  Book.fetchAll();
+  module.Book = Book;
 })(window);

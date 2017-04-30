@@ -6,19 +6,25 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
+const requestProxy = require('express-request-proxy');
 const PORT = process.env.PORT || 3000;
 const app = express();
 app.use(express.static('./public'));
 
-// why would there be a difference between / and *
-// app.get('/', (request,response) => response.sendFile('public/portfolio.html', {root: '.'}));
+function proxyGitHub(request, response) {
+  console.log('Routing GitHub request for', request.params[0]);
+  (requestProxy({
+    url: `https://api.github.com/${request.params[0]}`,
+    headers: {Authorization: `token ${process.env.GITHUB_TOKEN}`}
+  }))(request, response);
+}
+
+app.get('/github/*', proxyGitHub);
 
 app.get('*', (request, response) => response.sendFile('portfolio.html', {root: './public'}));
 
-// how to write FP code with two results?
-app.post('/project_data', bodyParser, function(request, response) {
-  console.log(request.body);
-  response.send('Record posted to server!!');
-})
+app.post('/project_data', bodyParser, (request, response)=>
+  {console.log(request.body);
+  response.send('Record posted to server!!');})
 
 app.listen(PORT, () => console.log(`server is running on port:${PORT}`));

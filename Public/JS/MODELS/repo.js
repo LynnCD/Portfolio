@@ -4,14 +4,10 @@
   const repos = {};
   repos.all = [];
   repos.requestRepos = callback => {
-    $.ajax({
-      url: `https://api.github.com/users/LynnCD/repos`,
-      method: 'GET',
-      header: {Authorization: `token f8ad67f5d071cf2c4fea7c9e4154b3111ad98445`}
-    })
-     .then(response => {repos.all = response; callback();})
+    $.get(`/github/user/repos`)
+    .then(res => repos.all = res, err => console.error(err))
+    .then(callback);
   }
   repos.with = attr => repos.all.filter(repo => repo[attr]);
-
   module.repos = repos;
 })(window);
