@@ -1,0 +1,16 @@
+h1 a {
+  font-family: 'Tangerine';
+  font-size: 5em;
+  font-weight: bolder;
+}
+
+.map {
+  margin-top: 20px;
+}
+
+#mapdiv {
+  width: 38vw;
+  height: 25vw;
+  text-align: center;
+  padding-top: 7px;
+}
