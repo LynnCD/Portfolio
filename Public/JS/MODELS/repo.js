@@ -7,7 +7,7 @@
     $.ajax({
       url: `https://api.github.com/users/LynnCD/repos`,
       method: 'GET',
-      header: {Authorization: `token f8ad67f5d071cf2c4fea7c9e4154b3111ad98445`}
+      header: {'Authorization': `token ${githubToken}`}
     })
      .then(response => {repos.all = response; callback();})
   }
