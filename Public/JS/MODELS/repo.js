@@ -9,7 +9,7 @@
       method: 'GET',
       header: {'Authorization': `token ${githubToken}`}
     })
-     .then(response => {repos.all = response; callback();})
+      .then(response => {repos.all = response; callback();})
   }
   repos.with = attr => repos.all.filter(repo => repo[attr]);
 
