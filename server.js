@@ -15,7 +15,7 @@ app.get('/repos', (req, res) => {
     .set('Authorization', `token ${process.env.GITHUB_TOKEN}`)
     .end((err, repos) => {
       if(err) console.log(err);
-      res.send(repos);
+      res.send(repos.body);
     })
 });
 

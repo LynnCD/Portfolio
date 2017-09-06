@@ -4,11 +4,7 @@
   const repos = {};
   repos.all = [];
   repos.requestRepos = callback => {
-    $.ajax({
-      url: `https://api.github.com/users/LynnDC/repos`,
-      method: 'GET',
-      header: {'Authorization': `token ${githubToken}`}
-    })
+    $.get('/repos')
       .then(response => repos.all = response, err => console.error(err))
       .then(callback);
   };
