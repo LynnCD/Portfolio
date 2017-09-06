@@ -5,7 +5,7 @@
   repos.all = [];
   repos.requestRepos = callback => {
     $.ajax({
-      url: `https://api.github.com/users/LynnCD/repos`,
+      url: `https://api.github.com/users/LynnDC/repos`,
       method: 'GET',
       header: {'Authorization': `token ${githubToken}`}
     })
