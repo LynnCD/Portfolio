@@ -1,21 +1,24 @@
 'use strict';
-// get: is to get the thing thats already exsit, if no data exist yet, retrieve nothing.
-//post: create a resoure in server and send new data to the data base.
-//put: update exsiting entry in the existing data base, it can only update things thats already exsit. can be used without 'get' if you konw the exact ID.
-//delete: removes an existing entry from the database.
 
 const express = require('express');
+const sa = require('superagent');
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3000;
 const app = express();
-app.use(express.static('./public'));
 
-// why would there be a difference between / and *
-// app.get('/', (request,response) => response.sendFile('public/portfolio.html', {root: '.'}));
+app.use(express.static('./public'));
 
 app.get('*', (request, response) => response.sendFile('portfolio.html', {root: './public'}));
 
-// how to write FP code with two results?
+app.get('/repos', (req, res) => {
+  sa.get('https://api.github.com/users/LynnDC/repos')
+    .set('Authorization', `token ${process.env.GITHUB_TOKEN}`)
+    .end((err, repos) => {
+      if(err) console.log(err);
+      res.send(repos);
+    })
+});
+
 app.post('/project_data', bodyParser, function(request, response) {
   console.log(request.body);
   response.send('Record posted to server!!');
