@@ -1,3 +1,3 @@
 # Portfolio
 
-https://git.heroku.com/lynndcportfolio.git
+https://lynndcportfolio.herokuapp.com
